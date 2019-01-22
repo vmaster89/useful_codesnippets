@@ -1,0 +1,21 @@
+<html>
+  <script> 
+    var http = new XMLHttpRequest();
+    let url = ""; // link to your json 
+    http.open("GET", url, true);
+    http.send();
+   	http.onload = () => {
+    	let json = JSON.parse(http.responseText); 
+      console.log("ready"); 
+    	for ( let i = 0; i < json.length; i++) {
+      	let v; 
+        let tempJSON = json[i]; 
+        document.write("<p>"); https://api.github.com/users/hadley/orgs
+        for (v in tempJSON) {
+          document.write(v + ": " + String(tempJSON[v]) + "|");
+        }
+        document.write("</p>"); 
+      }
+    }
+  </script>
+</html>
