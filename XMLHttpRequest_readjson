@@ -1,7 +1,7 @@
 <html>
   <script> 
     var http = new XMLHttpRequest();
-    let url = ""; // link to your json 
+    let url = ""; // link to your json (https://api.github.com/users/hadley/orgs) 
     http.open("GET", url, true);
     http.send();
    	http.onload = () => {
@@ -10,7 +10,7 @@
     	for ( let i = 0; i < json.length; i++) {
       	let v; 
         let tempJSON = json[i]; 
-        document.write("<p>"); https://api.github.com/users/hadley/orgs
+        document.write("<p>"); 
         for (v in tempJSON) {
           document.write(v + ": " + String(tempJSON[v]) + "|");
         }
