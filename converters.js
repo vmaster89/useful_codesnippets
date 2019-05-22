@@ -20,6 +20,7 @@ function text2Hexa(string) {
 }
 
 // hexa2Text 
+// Does not work with some chars like Umlauts, because their Code has a length > 2 (ä => 103) 
  function hexa2Text(string) {
   return string.match(/.{1,2}/g).map(function (hx) {
    return String.fromCharCode(parseInt(hx, 15)); 
