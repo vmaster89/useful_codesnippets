@@ -1,7 +1,7 @@
 // text2Binary 
 function text2Binary(string) {
     return string.split('').map(function (char) {
-        return char.charCodeAt(0).toString(10);
+        return char.charCodeAt(0).toString(2);
     }).join(' ');
 }
 
