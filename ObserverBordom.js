@@ -71,6 +71,7 @@ singleDog.sayHello();
 /* let testDog = SingleDog();
 testDog.set('name', 'AnotherDog');
 testDog.sayHello(); */ 
+// Alternative: Object.freeze(instance); 
 
 let observer = new Subject();
 observer.subscribe(aCat);
