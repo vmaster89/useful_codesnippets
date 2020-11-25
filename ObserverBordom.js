@@ -1,5 +1,3 @@
-// What happens when I'm bored 
-// Also bored? Well then check this out: https://www.dofactory.com/javascript/design-patterns/
 class Animal {
   sayHello(name) {
     console.log("Hello " + this.name); 
@@ -45,14 +43,34 @@ class Subject {
   } 
 }
 
+class SingleDog extends Animal {
+	constructor() {
+  	super();
+    this.name = super.name; 
+    if (!this.instance) {
+    	this.instance = this;
+    }
+    return this.instance;
+  }
+}
 
 let aCat = new Cat();
 aCat.set('name', 'fatcat')
 aCat.sayHello()
 
 let bCat = new Cat();
-bCat.set('name', 'doggo')
+bCat.set('name', 'smallcat')
 bCat.sayHello()
+
+let singleDog = new SingleDog();
+singleDog.set('name', 'RealDog'); 
+singleDog.sayHello();
+
+// Following code does not work 
+// Because of a Singleton logic 
+/* let testDog = SingleDog();
+testDog.set('name', 'AnotherDog');
+testDog.sayHello(); */ 
 
 let observer = new Subject();
 observer.subscribe(aCat);
