@@ -1,4 +1,5 @@
 // What happens when I'm bored 
+// Also bored? Well then check this out: https://www.dofactory.com/javascript/design-patterns/
 class Animal {
   sayHello(name) {
     console.log("Hello " + this.name); 
