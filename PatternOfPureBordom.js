@@ -81,3 +81,45 @@ aCat.sayHello();
 // bCat.sayHello();
 
 observer.informAll();
+
+// Factory 
+class Customer {
+	constructor(name) {
+  	this.name = name; 
+  }
+  say () {
+  	console.log(`My name is customer ${this.name}`)
+  }
+}
+
+class CustomerFactory {
+  create (name) {
+  	return new Customer(name);
+  }
+}
+
+class SalesEmployee {
+	constructor(name) {
+  	this.name = name; 
+  }
+  say () {
+  	console.log(`My name is SalesEmployee ${this.name}`)
+  }
+}
+
+class SalesEmployeeFactory {
+  create (name) {
+  	return new SalesEmployee(name);
+  }
+}
+
+const peoples = [];
+const customerFactory = new CustomerFactory(); 
+const salesEmployeeFactory = new SalesEmployeeFactory(); 
+
+peoples.push(customerFactory.create('Harry Potter'));
+peoples.push(salesEmployeeFactory.create('Darth Vater'));
+
+peoples.forEach( (item) => {
+	item.say();
+});
