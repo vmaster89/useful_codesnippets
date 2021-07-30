@@ -33,6 +33,7 @@ User.prototype.get = function (attr) {
 }
 
 // https://openbook.rheinwerk-verlag.de/javainsel/06_001.html#u6.9
+// Based on Repository Pattern 
 var UserBase = function (allUsers) {
   // Only one Instance should be usable 
   if (typeof UserBase.instance === 'object') {
