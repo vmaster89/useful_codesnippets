@@ -1,0 +1,25 @@
+const screen = document.getElementById('display').getContext('2d');
+
+screen.fillStyle = 'black';
+screen.fillRect(10,10,1,1);
+
+let x = 200, y = 200;
+
+function point(x, y, canvas){
+  canvas.beginPath();
+  canvas.moveTo(x, y);
+  canvas.lineTo(x+1, y+1);
+  canvas.stroke();
+}
+
+let addToX = 0, addToY = 0;
+let radius = 100;
+
+//for (let j = 0; j<=360; j+=40) {
+     for (let i = 0; i<=1000; i++) {
+          addToX = addToX + Math.cos(i)*radius;
+          addToY = addToY + Math.sin(i)*radius;
+
+         point(x+addToX, y+addToY, screen); 
+      }
+  //  }
