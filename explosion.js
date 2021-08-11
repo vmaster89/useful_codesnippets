@@ -1,3 +1,7 @@
+/** 
+<canvas id="display" width="1000" height="500" />
+**/
+
 const screen = document.getElementById('display').getContext('2d');
 
 screen.fillStyle = 'black';
@@ -48,9 +52,10 @@ function animate() {
   let item2;
   r += 1;
   angle += Math.random()*10;
+// Remove one loop here 
   for ( let i = 0; i < 10; i += 1 ) {
     item = pointRepository.get(i);
-    item.drawPoint(x + Math.random()*10 + r *  Math.cos(Math.round(i)), y + Math.random()*10 + r * Math.sin(Math.round(i)), red)
+    item.drawPoint(x + Math.random()*10 + r *  Math.cos(Math.round(i)), y + Math.random()*10 + r * Math.sin(Math.round(i)), red);
   }
   for ( let i = 0; i < 10; i += 1 ) {
     item2 = pointRepository2.get(i);
