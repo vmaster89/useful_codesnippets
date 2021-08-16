@@ -4,13 +4,14 @@
 * JS Fiddle: https://jsfiddle.net/crqo4mgy/8/
 **/
 
+// Setup default HTML Elements 
 let screen = document.getElementById('window');
 let canvas = screen.getContext('2d');
 const colorButtonArea = document.getElementById('color');
 let html = colorButtonArea.innerHTML || '';
 
+// Create new color map with pre-defined 16 color (more is too much work :) :)) 
 const colorMap = new Map();
-
 colorMap.set(15, 'white');
 colorMap.set(14, 'yellow');
 colorMap.set(13, 'purple');
@@ -28,22 +29,22 @@ colorMap.set(2, 'green');
 colorMap.set(1, 'blue');
 colorMap.set(0, 'black');
 
+// Buttons to select the colors 
 for ( let i = 0; i <= 15; i+= 1 ) {
 	html = html + `<input type='submit' value='${colorMap.get(i)}' style='background-color: ${colorMap.get(i)}' id="${i}"/>`;
 }
 
 colorButtonArea.innerHTML = html;
 
+// Default Color "get" / "set" methods 
 let pickedColor = 5;
-
 function saveColor (color) {
 	pickedColor = color;
 }
-
 function getColor () {
 	return pickedColor ?? 5;
 }
-
+// Attach default listener to buttons 
 for ( let i = 0; i <= 15; i+= 1 ) {
 	let button = document.getElementById(i);
 	button.addEventListener('click', (e) => {
@@ -52,17 +53,19 @@ for ( let i = 0; i <= 15; i+= 1 ) {
   });
 }
 
+// Mouse coordinates 
 let mouseX = 0;
 let mouseY = 0;
 
+// Default Image size is 32 x 32 
+let img_x = 33, img_y = 33;
 let img = [];
-
-for ( let j = 0; j <= 33; j += 1 ) {
+for ( let j = 0; j <= img_y; j += 1 ) {
 	let arr = [];
-	for ( let i = 0; i <= 33; i += 1 ) {
-    arr.push(5);
-  }
-  img.push(arr);
+	for ( let i = 0; i <= img_x; i += 1 ) {
+    		arr.push(5); 
+  	}
+	img.push(arr);
 }
 
 function rect(x, y, size, color, canvas) {
@@ -74,12 +77,12 @@ let x, y = 0;
 
 function drawMap(x, y) {
 	for ( let j = 0; j <= img.length - 1; j+= 1) {
-	x = 0;
-  y = y+1;
-	for ( let i = 0; i <= img[j].length - 1; i+= 1) {
-  	x = x+1;
-  	rect(x*10,y*10,10,colorMap.get(img[j][i]), canvas);
-  }
+		x = 0;
+  		y = y+1;
+		for ( let i = 0; i <= img[j].length - 1; i+= 1) {
+  			x = x+1;
+  			rect(x*10,y*10,10,colorMap.get(img[j][i]), canvas);
+  		}
 	}
 }
 
