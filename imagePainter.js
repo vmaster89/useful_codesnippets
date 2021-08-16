@@ -49,7 +49,7 @@ for ( let i = 0; i <= 15; i+= 1 ) {
 	let button = document.getElementById(i);
 	button.addEventListener('click', (e) => {
   	saveColor(i);
-    console.log(i);
+    	console.log(i);
   });
 }
 
@@ -68,9 +68,10 @@ for ( let j = 0; j <= img_y; j += 1 ) {
 	img.push(arr);
 }
 
+// Draw pixel on canvas 
 function rect(x, y, size, color, canvas) {
 	canvas.fillStyle = color;
-  canvas.fillRect(x,y,size,size);
+ 	canvas.fillRect(x,y,size,size);
 }
 
 let x, y = 0;
@@ -90,12 +91,13 @@ drawMap(x, y);
 
 screen.onmousedown = function (e) {
 	mouseX = e.x - e.x % 10;
-  mouseY = e.y - e.y % 10;
-  //console.log(e.x + ' ' + e.y);
-  //console.log(mouseX + ' ' + mouseY);
-  img[parseInt(mouseY/10 - 2)][parseInt(mouseX/10 - 2)] = getColor();
-  console.log(getColor());
-  drawMap(0, 0);
+  	mouseY = e.y - e.y % 10;
+  	//console.log(e.x + ' ' + e.y);
+  	//console.log(mouseX + ' ' + mouseY);
+	// Overwrite pixel in pixel map 
+  	img[parseInt(mouseY/10 - 2)][parseInt(mouseX/10 - 2)] = getColor();
+  	console.log(getColor());
+  	drawMap(0, 0);
 };
 
 /* 
