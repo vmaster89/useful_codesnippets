@@ -2,6 +2,7 @@
 * HTML: <canvas id="window" width="500" height="500" style="border: 1px solid black;" ></canvas>
 * <div id="color"></div>
 * JS Fiddle: https://jsfiddle.net/crqo4mgy/8/
+* Actual version: https://jsfiddle.net/6g89ky1d/4/
 **/
 
 // Setup default HTML Elements 
