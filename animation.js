@@ -5,8 +5,8 @@ screen.fillRect(10,10,1,1);
 
 let x = 800, y = 400;
 
-function point(x, y, canvas, color
-	canvas.fillStyle = color;
+function point(x, y, canvas, color) {
+canvas.fillStyle = color;
   canvas.fillRect(x, y, 2, 2);
 }
 
